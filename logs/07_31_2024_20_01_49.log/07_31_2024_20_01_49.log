@@ -1,0 +1,16 @@
+[ 2024-07-31 20:01:49,356 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8000
+ * Running on http://192.168.1.114:8000
+[ 2024-07-31 20:01:49,356 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-07-31 20:01:49,357 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-07-31 20:01:49,890 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-07-31 20:01:49,900 ] 97 werkzeug - INFO -  * Debugger PIN: 353-471-289
+[ 2024-07-31 20:01:59,854 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:01:59] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 20:01:59,891 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:01:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2024-07-31 20:02:09,160 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:02:09] "POST /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 20:03:38,770 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:03:38] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 20:04:34,276 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:04:34] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 20:04:35,085 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:04:35] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 20:04:46,910 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:04:46] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 20:04:57,884 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 20:04:57] "POST /predictdata HTTP/1.1" 200 -

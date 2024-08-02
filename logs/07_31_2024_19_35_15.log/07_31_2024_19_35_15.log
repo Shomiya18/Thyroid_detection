@@ -1,0 +1,26 @@
+[ 2024-07-31 19:35:16,006 ] 25 root - INFO - Entered the data ingestion method or component
+[ 2024-07-31 19:35:16,012 ] 28 root - INFO - Read the dataset as dataframe
+[ 2024-07-31 19:35:16,022 ] 36 root - INFO - Train-test split initiated
+[ 2024-07-31 19:35:16,032 ] 43 root - INFO - Ingestion of the data is completed
+[ 2024-07-31 19:35:16,037 ] 76 root - INFO - Read train and test data completed
+[ 2024-07-31 19:35:16,037 ] 78 root - INFO - Obtaining preprocessing object
+[ 2024-07-31 19:35:16,037 ] 56 root - INFO - Categorical columns: ['sex', 'sick', 'pregnant', 'thyroid surgery', 'I131 treatment', 'lithium', 'goitre', 'tumor']
+[ 2024-07-31 19:35:16,037 ] 57 root - INFO - Numerical columns: ['age', 'TSH', 'T3', 'TT4', 'T4U', 'FTI']
+[ 2024-07-31 19:35:16,038 ] 91 root - INFO - Applying preprocessing object on training dataframe and testing dataframe.
+[ 2024-07-31 19:35:16,053 ] 103 root - INFO - Saved preprocessing object.
+[ 2024-07-31 19:35:16,053 ] 34 root - INFO - Split training and test input data
+[ 2024-07-31 19:38:56,060 ] 113 root - INFO - Best found model on both training and testing dataset
+[ 2024-07-31 19:38:56,071 ] 126 root - INFO - Accuracy Score: 0.9820441988950276
+[ 2024-07-31 19:38:56,071 ] 127 root - INFO - Confusion Matrix:
+[[ 56   3]
+ [ 10 655]]
+[ 2024-07-31 19:38:56,072 ] 128 root - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+         0.0       0.85      0.95      0.90        59
+         1.0       1.00      0.98      0.99       665
+
+    accuracy                           0.98       724
+   macro avg       0.92      0.97      0.94       724
+weighted avg       0.98      0.98      0.98       724
+

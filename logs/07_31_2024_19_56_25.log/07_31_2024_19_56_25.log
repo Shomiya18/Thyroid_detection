@@ -1,0 +1,14 @@
+[ 2024-07-31 19:56:25,650 ] 97 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8080
+ * Running on http://192.168.1.114:8080
+[ 2024-07-31 19:56:25,650 ] 97 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[ 2024-07-31 19:56:25,651 ] 97 werkzeug - INFO -  * Restarting with stat
+[ 2024-07-31 19:56:26,211 ] 97 werkzeug - WARNING -  * Debugger is active!
+[ 2024-07-31 19:56:26,220 ] 97 werkzeug - INFO -  * Debugger PIN: 353-471-289
+[ 2024-07-31 19:56:30,780 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 19:56:30] "GET / HTTP/1.1" 200 -
+[ 2024-07-31 19:56:30,833 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 19:56:30] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+[ 2024-07-31 19:56:59,675 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 19:56:59] "GET /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 19:57:44,884 ] 97 werkzeug - INFO - 127.0.0.1 - - [31/Jul/2024 19:57:44] "POST /predictdata HTTP/1.1" 200 -
+[ 2024-07-31 20:00:01,141 ] 97 werkzeug - INFO -  * Detected change in '/home/googlyji/ml_projects/ml projects /thyroid/app.py', reloading
+[ 2024-07-31 20:00:01,291 ] 97 werkzeug - INFO -  * Restarting with stat

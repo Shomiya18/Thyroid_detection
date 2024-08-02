@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Detection Model </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="number"], select {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            padding: 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result, .error {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .result {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thyroid Detection model</h1>
+        <form action="/predictdata" method="post">
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <label for="sick">Sick:</label>
+            <select id="sick" name="sick" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="pregnant">Pregnant:</label>
+            <select id="pregnant" name="pregnant" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="thyroid">Thyroid Surgery:</label>
+            <select id="thyroid" name="thyroid" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="surgery">Surgery:</label>
+            <select id="surgery" name="surgery" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="I131">I131 Treatment:</label>
+            <select id="I131" name="I131" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="treatment">Treatment:</label>
+            <select id="treatment" name="treatment" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="lithium">Lithium:</label>
+            <select id="lithium" name="lithium" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="goitre">Goitre:</label>
+            <select id="goitre" name="goitre" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="tumor">Tumor:</label>
+            <select id="tumor" name="tumor" required>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+
+            <label for="TSH">TSH:</label>
+            <input type="number" id="TSH" name="TSH" required>
+
+            <label for="T3">T3:</label>
+            <input type="number" id="T3" name="T3" required>
+
+            <label for="TT4">TT4:</label>
+            <input type="number" id="TT4" name="TT4" required>
+
+            <label for="T4U">T4U:</label>
+            <input type="number" id="T4U" name="T4U" required>
+
+            <label for="FTI">FTI:</label>
+            <input type="number" id="FTI" name="FTI" required>
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if results %}
+            <div class="result">
+                <h2>Prediction Result</h2>
+                <p>The predicted value is: {{ results }}</p>
+            </div>
+        {% endif %}
+
+        {% if error %}
+            <div class="error">
+                <h2>Error</h2>
+                <p>{{ error }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
