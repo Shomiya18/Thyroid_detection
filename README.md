@@ -1,8 +1,7 @@
 
+https://github.com/user-attachments/assets/08adcf78-a9db-4ac4-a260-a632ce933ea5
 
 
-
-https://github.com/Amandeepsinghn/Flight_price/assets/137553469/a647bd22-74b7-4c7c-b491-f0f6155f5851
 
 
 
@@ -30,11 +29,11 @@ https://github.com/Amandeepsinghn/Flight_price/assets/137553469/a647bd22-74b7-4c
 STEPS:
 Clone the repository
 ```bash
-  https://github.com/Amandeepsinghn/Flight_price.git
+  https://github.com/Shomiya18/Thyroid_detection.git
 ```
 STEP 01- Create a conda environment after opening the repository
 ```bash
-  conda create -n flight python=3.8 -y
+  conda create -n thyroid python=3.8 -y
 ```
 ```bash
   conda activate flight
