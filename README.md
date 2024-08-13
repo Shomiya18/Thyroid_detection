@@ -36,7 +36,7 @@ STEP 01- Create a conda environment after opening the repository
   conda create -n thyroid python=3.8 -y
 ```
 ```bash
-  conda activate flight
+  conda activate thyroid
 ```
 STEP 02- install the requirements
 ```bash
