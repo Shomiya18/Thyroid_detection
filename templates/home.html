@@ -3,57 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thyroid Detection Model </title>
+    <title>Thyroid Detection Model</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eef2f7;
             color: #333;
             margin: 0;
             padding: 0;
         }
         .container {
             max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
+            margin: 30px auto;
+            padding: 30px;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
         h1 {
-            text-align: center;
-            color: #007BFF;
+            color: #4CAF50;
+            margin-bottom: 20px;
         }
         form {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .form-group {
+            width: 48%;
+            margin-bottom: 20px;
         }
         label {
             font-weight: bold;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            color: #007BFF;
         }
         input[type="number"], select {
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        input[type="number"]:focus, select:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
         }
         button {
-            padding: 15px;
-            background-color: #007BFF;
-            color: #fff;
+            padding: 15px 30px;
+            background-color: #28a745;
+            color: white;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
+            font-size: 18px;
             cursor: pointer;
-            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #218838;
         }
         .result, .error {
             margin-top: 20px;
             padding: 15px;
-            border-radius: 4px;
+            border-radius: 6px;
+            max-width: 500px;
+            width: 100%;
+            margin: 20px auto 0;
         }
         .result {
             background-color: #d4edda;
@@ -63,89 +84,149 @@
             background-color: #f8d7da;
             color: #721c24;
         }
+        input::placeholder {
+            color: #aaa;
+        }
+        @media screen and (max-width: 768px) {
+            .form-group {
+                width: 100%;
+            }
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            button {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Thyroid Detection model</h1>
+        <h1>Thyroid Detection Model</h1>
         <form action="/predictdata" method="post">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" required>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required>
+            </div>
 
-            <label for="sex">Sex:</label>
-            <select id="sex" name="sex" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-            </select>
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="" disabled selected>Select your sex</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
 
-            <label for="sick">Sick:</label>
-            <select id="sick" name="sick" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="sick">Sick:</label>
+                <select id="sick" name="sick" required>
+                    <option value="" disabled selected>Are you sick?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="pregnant">Pregnant:</label>
-            <select id="pregnant" name="pregnant" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="pregnant">Pregnant:</label>
+                <select id="pregnant" name="pregnant" required>
+                    <option value="" disabled selected>Are you pregnant?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="thyroid">Thyroid Surgery:</label>
-            <select id="thyroid" name="thyroid" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="thyroid">Thyroid Surgery:</label>
+                <select id="thyroid" name="thyroid" required>
+                    <option value="" disabled selected>Had Thyroid Surgery?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="surgery">Surgery:</label>
-            <select id="surgery" name="surgery" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="surgery">Surgery:</label>
+                <select id="surgery" name="surgery" required>
+                    <option value="" disabled selected>Undergone Surgery?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="I131">I131 Treatment:</label>
-            <select id="I131" name="I131" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="I131">I131 Treatment:</label>
+                <select id="I131" name="I131" required>
+                    <option value="" disabled selected>Received I131 Treatment?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="treatment">Treatment:</label>
-            <select id="treatment" name="treatment" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="treatment">Treatment:</label>
+                <select id="treatment" name="treatment" required>
+                    <option value="" disabled selected>Currently under Treatment?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="lithium">Lithium:</label>
-            <select id="lithium" name="lithium" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="lithium">Lithium:</label>
+                <select id="lithium" name="lithium" required>
+                    <option value="" disabled selected>Received Lithium Treatment?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="goitre">Goitre:</label>
-            <select id="goitre" name="goitre" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="goitre">Goitre:</label>
+                <select id="goitre" name="goitre" required>
+                    <option value="" disabled selected>Have Goitre?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="tumor">Tumor:</label>
-            <select id="tumor" name="tumor" required>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
+            <div class="form-group">
+                <label for="tumor">Tumor:</label>
+                <select id="tumor" name="tumor" required>
+                    <option value="" disabled selected>Have Tumor?</option>
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                </select>
+            </div>
 
-            <label for="TSH">TSH:</label>
-            <input type="number" id="TSH" name="TSH" required>
+            <div class="form-group">
+                <label for="TSH">TSH:</label>
+                <input type="number" id="TSH" name="TSH" placeholder="TSH Level" required>
+            </div>
 
-            <label for="T3">T3:</label>
-            <input type="number" id="T3" name="T3" required>
+            <div class="form-group">
+                <label for="T3">T3:</label>
+                <input type="number" id="T3" name="T3" placeholder="T3 Level" required>
+            </div>
 
-            <label for="TT4">TT4:</label>
-            <input type="number" id="TT4" name="TT4" required>
+            <div class="form-group">
+                <label for="TT4">TT4:</label>
+                <input type="number" id="TT4" name="TT4" placeholder="TT4 Level" required>
+            </div>
 
-            <label for="T4U">T4U:</label>
-            <input type="number" id="T4U" name="T4U" required>
+            <div class="form-group">
+                <label for="T4U">T4U:</label>
+                <input type="number" id="T4U" name="T4U" placeholder="T4U Level" required>
+            </div>
 
-            <label for="FTI">FTI:</label>
-            <input type="number" id="FTI" name="FTI" required>
+            <div class="form-group">
+                <label for="FTI">FTI:</label>
+                <input type="number" id="FTI" name="FTI" placeholder="FTI Level" required>
+            </div>
 
             <button type="submit">Predict</button>
         </form>
@@ -153,7 +234,7 @@
         {% if results %}
             <div class="result">
                 <h2>Prediction Result</h2>
-                <p>The predicted value is: {{ results }}</p>
+                <p>{{ results }}</p>
             </div>
         {% endif %}
 
